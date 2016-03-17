@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="slide-screen.css">
+    </head>
+    <body>
+        <div class="container-fluid">  
+            <div id="wrapper">
+                <div class="clearfix" id="container">
+                    <div class="first"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+            </div>
+        </div>
+       
+        <script src="zepto.js"></script>        <!-- 引入依赖库 -->
+        <script src="zepto-touch.js"></script>
+        <script src="../slide.js"></script>  <!-- 引入插件 -->
+        <script>
+        Zepto(function ($) {
+            var devWidth = window.innerWidth; //获取设备宽度
+            
+            // 初始化插件
+            var slide = $('#wrapper').customSlide({
+                pageX:3,
+                itemWidth:devWidth,
+                speed:300
+            });
+
+            // 监听用户向左滑 调用下一页
+            $('#wrapper').swipeLeft(function () {
+                slide.customSlide('next');
+            });
+
+            // 监听用户向右滑 调用上一页
+            $('#wrapper').swipeRight(function () {
+                slide.customSlide('prev');
+            });
+
+        });
+        </script>
+    </body>
+</html>

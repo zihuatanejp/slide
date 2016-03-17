@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+html,body,.container-fluid{
+	margin:0px;padding:0px;
+	width: 100%;
+}
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+#wrapper{
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+#container{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
+#container>div{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.first{
+    background-color: blue;
+}
+.two{
+    background-color: yellow;
+}
+.three{
+    background-color: green;
+}
